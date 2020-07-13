@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script  >
+   /* function foo(num) {
+        console.log( "foo: " + num );
+        // keep track of how many times `foo` is called
+        console.log(this);
+        this.count++;
+    }
+    foo.count = 0;
+    var i;
+    for (i=0; i<10; i++) {
+        if (i > 5) {
+            foo( i );
+        }
+    }
+
+    console.log(foo);
+    // foo: 6
+    // foo: 7
+    // foo: 8
+    // foo: 9
+    // how many times was `foo` called?
+    console.log( foo.count ); // 0 -- WTF?*/
+   function foo(el) {
+       console.log( el, this.id );
+   }
+   var obj = {
+       id: "awesome"
+   };
+   // use `obj` as `this` for `foo(..)` calls
+   [1, 2, 3].forEach(foo,obj);
+   // 1 awesome 2 awesome 3 awesome
+
+</script>
+
+</body>
+</html>
